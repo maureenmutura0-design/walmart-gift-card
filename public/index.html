@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Walmart Gift Card">
+  <title>Walmart Gift Card</title>
+  <style>
+    :root {
+      --walmart-blue: #0071ce;
+      --walmart-blue-dark: #005a9f;
+      --walmart-yellow: #ffc220;
+      --ink: #111111;
+      --paper: #effaff;
+      --muted: #8c8c8c;
+      --line: #e4f1f6;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(100% - 28px, 840px);
+      margin: 0 auto;
+      padding: 40px 0 48px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 112px;
+      border: 1px solid var(--line);
+      border-radius: 26px 26px 0 0;
+      background: var(--white);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--walmart-blue);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 22px;
+      height: 22px;
+      border: 6px solid var(--walmart-blue);
+      border-radius: 50%;
+      box-shadow: 0 -13px 0 -9px var(--walmart-yellow), 0 13px 0 -9px var(--walmart-yellow), 13px 0 0 -9px var(--walmart-yellow), -13px 0 0 -9px var(--walmart-yellow);
+    }
+
+    .eyebrow {
+      display: none;
+    }
+
+    main {
+      padding: 30px clamp(22px, 8vw, 62px) 56px;
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 26px 26px;
+      background: var(--white);
+    }
+
+    .offer-title {
+      margin: 0 0 24px;
+      text-align: center;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .offer-title::first-line {
+      color: var(--ink);
+    }
+
+    .offer-title strong {
+      color: var(--walmart-blue);
+      font-weight: 800;
+    }
+
+    .section-label {
+      display: flex;
+      display: block;
+      width: max-content;
+      margin: 0 auto 22px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.3em;
+      text-align: center;
+    }
+
+    .section-label::after {
+      display: block;
+      width: 114px;
+      height: 9px;
+      margin: 8px auto 0;
+      border-radius: 8px;
+      background: var(--walmart-blue);
+      content: "";
+    }
+
+    .steps {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 34px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      align-items: center;
+      min-height: 78px;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 113, 206, 0.04);
+    }
+
+    .step-number {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--walmart-blue);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .step-text {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-weight: 700;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      min-height: 58px;
+      margin: 0 auto;
+      padding: 14px 30px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--walmart-blue);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      border-color: var(--walmart-blue-dark);
+      background: var(--walmart-blue-dark);
+      transform: translateY(-2px);
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid #8bc9f5;
+      outline-offset: 4px;
+    }
+
+    .faq {
+      margin-top: 94px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq h2 {
+      margin-bottom: 30px;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .faq-item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item dt {
+      margin-bottom: 7px;
+      font-weight: 800;
+    }
+
+    .faq-item dt span {
+      float: right;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .faq-item dd {
+      margin: 0;
+      max-width: 700px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 28px 12px 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 28px, 880px);
+        padding-top: 18px;
+      }
+
+      header {
+        padding-bottom: 38px;
+      }
+
+      .eyebrow {
+        display: none;
+      }
+
+      main {
+        padding-top: 46px;
+      }
+
+      .step {
+        grid-template-columns: 48px 1fr;
+        min-height: 68px;
+        padding: 10px 12px;
+      }
+
+      .step-number {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+      }
+
+      main {
+        padding: 24px 16px 40px;
+      }
+
+      .faq {
+        margin-top: 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand" aria-label="Walmart">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Walmart</span>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="page-title">
+        <h1 id="page-title" class="offer-title"><span>Walmart</span><br><strong>Gift Card</strong></h1>
+
+        <p class="section-label">HOW IT WORKS</p>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-number">1</span>
+            <span class="step-text">Click The Button Below</span>
+          </li>
+          <li class="step">
+            <span class="step-number">2</span>
+            <span class="step-text">Enter Your Email &amp; Info</span>
+          </li>
+          <li class="step">
+            <span class="step-number">3</span>
+            <span class="step-text">Complete 5 Recommended Deals</span>
+          </li>
+          <li class="step">
+            <span class="step-number">4</span>
+            <span class="step-text">Claim Gift Card &amp; Repeat</span>
+          </li>
+        </ol>
+
+        <a class="cta" href="https://zyntrif.com/r/1009">CLAIM NOW</a>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Frequently Asked Questions</h2>
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt>How long do the deals take? <span aria-hidden="true">▼</span></dt>
+          </div>
+          <div class="faq-item">
+            <dt>What are deals? <span aria-hidden="true">▼</span></dt>
+          </div>
+          <div class="faq-item">
+            <dt>When will I receive my gift card? <span aria-hidden="true">▼</span></dt>
+            <dd>Your Walmart voucher will be delivered within 1-2 hours after you complete all required deals. You'll receive a confirmation email with instructions on how to use your voucher.</dd>
+          </div>
+        </dl>
+      </section>
+
+    </main>
+    <footer>© 2026 Walmart Gift Card Promotion. All rights reserved.</footer>
+  </div>
+</body>
+</html>
