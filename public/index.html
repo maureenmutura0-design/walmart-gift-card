@@ -49,23 +49,10 @@
       background: var(--white);
     }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--walmart-blue);
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .brand-mark {
-      width: 22px;
-      height: 22px;
-      border: 6px solid var(--walmart-blue);
-      border-radius: 50%;
-      box-shadow: 0 -13px 0 -9px var(--walmart-yellow), 0 13px 0 -9px var(--walmart-yellow), 13px 0 0 -9px var(--walmart-yellow), -13px 0 0 -9px var(--walmart-yellow);
+    .brand-logo {
+      display: block;
+      width: min(252px, 70vw);
+      height: auto;
     }
 
     .eyebrow {
@@ -278,8 +265,7 @@
   <div class="page">
     <header>
       <div class="brand" aria-label="Walmart">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Walmart</span>
+        <img class="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Walmart_logo_%282008%29.svg" alt="Walmart">
       </div>
     </header>
 
